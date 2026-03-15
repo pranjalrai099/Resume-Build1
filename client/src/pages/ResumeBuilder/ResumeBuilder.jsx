@@ -9,6 +9,7 @@ import ColorPicker from '../../components/ColorPicker'
 import { toast } from 'react-toastify'
 import * as api from '../../api'
 import { SECTIONS, INITIAL_RESUME_DATA } from './constants'
+import { useUser } from '../../context/UserContext'
 
 
 const ResumeBuilder = () => {
@@ -83,10 +84,15 @@ const ResumeBuilder = () => {
   ]
 
   const activeSection = sections[activeSectionIndex]
+   const { user } = useUser();
 
-  useEffect(() => {
-    loadExistingResume()
-  }, [resumeId])
+    useEffect(() => {
+    if (user) {
+      loadExistingResume()
+    } else {
+      navigate('/app')
+    }
+  }, [resumeId, user])
 
   const changeResumeVisibility = async () => {
     setResumeData({ ...resumeData, public: !resumeData.public })
