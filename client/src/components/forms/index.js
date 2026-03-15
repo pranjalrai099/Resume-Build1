@@ -1,0 +1,6 @@
+export { default as PersonalInfoForm } from './PersonalInfoForm'
+export { default as ProfessionalSummaryForm } from './ProfessionalSummaryForm'
+export { default as ExperienceForm } from './ExperienceForm'
+export { default as EducationForm } from './EducationForm'
+export { default as ProjectForm } from './ProjectForm'
+export { default as SkillsForm } from './SkillsForm'
