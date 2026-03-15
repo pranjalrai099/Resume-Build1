@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/ai';
+const API_URL = 'https://resume-build1.onrender.com/api/ai';
 
 export const enhanceSummary = async (summary) => {
     try {
